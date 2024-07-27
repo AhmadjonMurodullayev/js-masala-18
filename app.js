@@ -37,7 +37,10 @@ console.log(collectValues(obj)); // Output: [1, 2, 3, 4]
 // 1. Berilgan stringdagi har bir so'zning birinchi va oxirgi harfini o'zgartiring.
 function swapFirstLast(s) {
   let arr = s.split(" ");
-   let num = arr[0]
+  for(let i = 0; i < arr.length; i++){
+    arr[i] = arr[i][0] + arr[i].slice(1, arr[i].length - 1) + arr[i][arr[i].length - 1] 
+  }
+  return arr
    
 }
 // Test case
@@ -91,11 +94,11 @@ function gcd(a){
         count++
       }
     }
-    if(count == 1){
+    if( count == 2){
       res.push(a[i])
   }
-  return res
 }
+return res
 }
 
 console.log(gcd([2, 3, 4, 5, 6, 7])); // Output: [2, 3, 5, 7]
